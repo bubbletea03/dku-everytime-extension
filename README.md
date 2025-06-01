@@ -57,7 +57,8 @@ everytime.kr, 즉 에브리타임으로 이동하여 로그인을 하면 바뀐 
 
 
 ### 1.6 팝업 기능
-![image](https://github.com/user-attachments/assets/b779bdd2-469b-40d0-8dbc-196b6b42f166)
+![image](https://github.com/user-attachments/assets/f27e7025-0eb9-4ff0-b05f-bedccf9524f5)
+
 
 - 오른쪽 상단의 확장 프로그램을 클릭하면, 원하는 기능을 끄고 켤 수 있는 팝업 창이 나옵니다. 
 - `키워드 차단 설정...` 으로 들어가면 원하는 키워드를 추가하거나 추가 편의 기능을 켤 수 있습니다. 
