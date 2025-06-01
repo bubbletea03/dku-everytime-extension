@@ -1,4 +1,4 @@
-import { reloadTab, initContentFunction } from "./utils.js";
+import { reloadTab } from "./utils.js";
 
 
 chrome.runtime.onMessage.addListener((message) => {

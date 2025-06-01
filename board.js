@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!Array.isArray(blackList) || blackList.length === 0 || blackList[0] === "") {
                 return;
             }
-
             mutations.forEach((mutation) => {
                 mutation.addedNodes.forEach((node) => {
                     if (!(node instanceof HTMLElement)) return;
