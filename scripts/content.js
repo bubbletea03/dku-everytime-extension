@@ -60,35 +60,39 @@ window.addEventListener('load', () => {
           }
         });
 
-      // iframe 생성
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://everytime.kr/timetable';
-      iframe.style.border = 'none';
-      iframe.style.transform = 'scale(0.8)';       // 80%로 축소
-      iframe.style.transformOrigin = 'top left';   // 기준점을 좌상단으로
-      iframe.style.width = '125%';                 // 축소된 만큼 보이게 너비 증가
-      iframe.style.height = '1100px';             
+      chrome.storage.local.get(['timetable'], (res) => {
+        if(res.timetable ?? true) {
+            // iframe 생성
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://everytime.kr/timetable';
+            iframe.style.border = 'none';
+            iframe.style.transform = 'scale(0.8)';       // 80%로 축소
+            iframe.style.transformOrigin = 'top left';   // 기준점을 좌상단으로
+            iframe.style.width = '125%';                 // 축소된 만큼 보이게 너비 증가
+            iframe.style.height = '1100px';             
 
-        //차단 오버레이 설정할 div (포지셔닝)
-        const wrapper = document.createElement('div');
-        wrapper.style.position = 'relative';
-        wrapper.style.width = '100%';
-        wrapper.style.height = '880px';
-        wrapper.style.marginBottom = '10px';
-        wrapper.appendChild(iframe);
+            //차단 오버레이 설정할 div (포지셔닝)
+            const wrapper = document.createElement('div');
+            wrapper.style.position = 'relative';
+            wrapper.style.width = '100%';
+            wrapper.style.height = '880px';
+            wrapper.style.marginBottom = '10px';
+            wrapper.appendChild(iframe);
 
-      // top-left 50x50 클릭 차단 오버레이
-      const overlay = document.createElement('div');
-      overlay.style.position = 'absolute';
-      overlay.style.top = '0';
-      overlay.style.left = '0';
-      overlay.style.width = '50px';
-      overlay.style.height = '50px';
-      overlay.style.zIndex = '10';
-      overlay.style.background = 'transparent'; //투명
+            // top-left 50x50 클릭 차단 오버레이
+            const overlay = document.createElement('div');
+            overlay.style.position = 'absolute';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '50px';
+            overlay.style.height = '50px';
+            overlay.style.zIndex = '10';
+            overlay.style.background = 'transparent'; //투명
 
-        wrapper.appendChild(overlay);
-        rightside.prepend(wrapper);
+            wrapper.appendChild(overlay);
+            rightside.prepend(wrapper);
+        }
+      });
     }
 });
 

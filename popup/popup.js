@@ -14,10 +14,10 @@ document.querySelector(".option-button").addEventListener("click", function () {
 document.querySelectorAll(".switch-container input").forEach((input) => {
     input.addEventListener("change", () => {
         const settings = {
-            theme: document.getElementById("theme-input").checked,
+            timetable: document.getElementById("timetable-input").checked,
             adguard: document.getElementById("adguard-input").checked,
             popularCollapse: document.getElementById("popular-input").checked,
-            keywordBlack: document.getElementById("keyword-input").checked,
+            food: document.getElementById("food-input").checked,
         }
 
         chrome.storage.local.set(settings);
@@ -26,10 +26,10 @@ document.querySelectorAll(".switch-container input").forEach((input) => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-  chrome.storage.local.get(["theme", "adguard", "popularCollapse", "keywordBlack"], (res) => {
-    document.getElementById("theme-input").checked = res.theme ?? true;
+  chrome.storage.local.get(["timetable", "adguard", "popularCollapse", "food"], (res) => {
+    document.getElementById("timetable-input").checked = res.timetable ?? true;
     document.getElementById("adguard-input").checked = res.adguard ?? true;
     document.getElementById("popular-input").checked = res.popularCollapse ?? true;
-    document.getElementById("keyword-input").checked = res.keywordBlack ?? true;
+    document.getElementById("food-input").checked = res.food ?? true;
   });
 });
