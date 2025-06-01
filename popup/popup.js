@@ -26,10 +26,10 @@ document.querySelectorAll(".switch-container input").forEach((input) => {
 })
 
 document.addEventListener("DOMContentLoaded", () => {
-  chrome.storage.local.get(["theme", "adguard", "popularCollapse", "keywordBlack"], (settings) => {
-    document.getElementById("theme-input").checked = settings.theme ?? true;
-    document.getElementById("adguard-input").checked = settings.adguard ?? true;
-    document.getElementById("popular-input").checked = settings.popularCollapse ?? true;
-    document.getElementById("keyword-input").checked = settings.keywordBlack ?? true;
+  chrome.storage.local.get(["theme", "adguard", "popularCollapse", "keywordBlack"], (res) => {
+    document.getElementById("theme-input").checked = res.theme ?? true;
+    document.getElementById("adguard-input").checked = res.adguard ?? true;
+    document.getElementById("popular-input").checked = res.popularCollapse ?? true;
+    document.getElementById("keyword-input").checked = res.keywordBlack ?? true;
   });
 });

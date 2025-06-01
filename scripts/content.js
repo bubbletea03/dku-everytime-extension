@@ -43,7 +43,22 @@ window.addEventListener('load', () => {
     const rightside = document.querySelector('#container > .rightside');
 
     if (rightside) {
-      rightside.innerHTML = '';
+
+        chrome.storage.local.get(['popularCollapse'], (res) => {
+          if (res.popularCollapse ?? true) {
+            new MutationObserver((mutations, obs) => {
+              const cards = rightside.querySelectorAll(".card");
+              
+              if (cards[0] && cards[1]) {
+                if (cards[0].querySelector('a.article') && cards[1].querySelector('a.list')) {
+                  cards[0].querySelectorAll('a.article').forEach((a) => a.remove());
+                  cards[1].querySelectorAll('a.list').forEach((a) => a.remove());
+                  obs.disconnect();
+                }
+              }
+            }).observe(document.body, {childList: true, subtree: true});
+          }
+        });
 
       // iframe 생성
       const iframe = document.createElement('iframe');
@@ -54,13 +69,13 @@ window.addEventListener('load', () => {
       iframe.style.width = '125%';                 // 축소된 만큼 보이게 너비 증가
       iframe.style.height = '1100px';             
 
-
-      //차단 오버레이 설정할 부모 div (포지셔닝)
-      const wrapper = document.createElement('div');
-      wrapper.style.position = 'relative';
-      wrapper.style.width = '100%';
-      wrapper.style.height = 'auto';
-      wrapper.appendChild(iframe);
+        //차단 오버레이 설정할 div (포지셔닝)
+        const wrapper = document.createElement('div');
+        wrapper.style.position = 'relative';
+        wrapper.style.width = '100%';
+        wrapper.style.height = '880px';
+        wrapper.style.marginBottom = '10px';
+        wrapper.appendChild(iframe);
 
       // top-left 50x50 클릭 차단 오버레이
       const overlay = document.createElement('div');
@@ -72,9 +87,8 @@ window.addEventListener('load', () => {
       overlay.style.zIndex = '10';
       overlay.style.background = 'transparent'; //투명
 
-      wrapper.appendChild(overlay);
-      rightside.appendChild(wrapper);
-
+        wrapper.appendChild(overlay);
+        rightside.prepend(wrapper);
     }
 });
 
