@@ -13,7 +13,7 @@
     },
     "action": {
         "default_popup": "popup/popup.html",
-        "default_icon": "icons/hello_extensions.png",
+        "default_icon": "icons/dku_lightbulb_bear_chrome.png",
         "16": "icons/dku_main_logo.png",
         "48": "icons/dku_main_logo.png",
         "128": "icons/dku_main_logo.png"
