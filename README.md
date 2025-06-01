@@ -18,7 +18,7 @@ https://kyni.notion.site/1b416d2b6c8c80de8a7eccb232fe7fb2
 
 여기서 비롯된 단국 에브리타임 확장프로그램은 단국대학교 학생들의 편의를 위해 맞춤화하는 도구입니다. 기본 UI를 단국대 스타일로 변경하고, 시간표 및 학생식당 메뉴 등 주요 정보를 빠르게 확인할 수 있도록 도와줍니다. 
 
-<a>임시 링크</a> 로 이동하여 크롬 브라우저에 확장프로그램을 추가합니다.
+https://developer.chrome.com/docs/extensions/develop/migrate/publish-mv3?hl=ko 로 이동하여 크롬 브라우저에 확장프로그램을 추가합니다.
 
 <br>
 everytime.kr, 즉 에브리타임으로 이동하여 로그인을 하면 바뀐 테마와 편의 기능을 확인할 수 있습니다.
