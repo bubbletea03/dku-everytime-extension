@@ -24,7 +24,8 @@ https://developer.chrome.com/docs/extensions/develop/migrate/publish-mv3?hl=ko �
 everytime.kr, 즉 에브리타임으로 이동하여 로그인을 하면 바뀐 테마와 편의 기능을 확인할 수 있습니다.
 <br>
 
-![image](https://github.com/user-attachments/assets/5cca000d-ce4f-466e-9486-21c43a89bfdf)
+![image](https://github.com/user-attachments/assets/80551f16-d6ed-44c4-ab16-d6b695640d50)
+
 - 크롬 브라우저의 우측 상단에서 추가한 확장프로그램을 확인할 수 있습니다.
 
 
