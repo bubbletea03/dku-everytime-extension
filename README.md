@@ -1,5 +1,17 @@
-# dku-everytime-extension
-repository for DKU Opensource SW team project
+단국대학교 오픈소스SW기초 수업 과제 프로젝트입니다.
+
+소프트웨어학과 22학번 이기윤
+소프트웨어학과 24학번 송지우
+모바일시스템공학과 23학번 정민서
+정보통계학과 22학번 김진우
+
+
+# 단국 에브리타임! DKU_TIME
+사실상 100%의 대학생이 사용하는 에브리타임. 데스크탑으로 들어갔을 때 만큼이라도 더 실용적으로 쓸 수 없을까?
+
+인기글 볼 시간에 시간표를 바로 보자! - 첫 페이지 시간표!
+
+
 
 https://kyni.notion.site/1b416d2b6c8c80de8a7eccb232fe7fb2
 
