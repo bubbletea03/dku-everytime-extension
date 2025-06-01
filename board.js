@@ -4,7 +4,7 @@ const obs0 = new MutationObserver((mutations, observer) => {
     let boardId = currentUrl.substring(21);
     chrome.storage.sync.get((storage) => {
         let blackList = storage.bList;
-        if (blackList.length > 0 && blackList[0] !== "") {
+        if (blackList && blackList.length > 0 && blackList[0] !== "") {
             mutations.forEach((mutation) => {
                 mutation.addedNodes.forEach((node) => {
                     if (!(node instanceof HTMLElement)) return;

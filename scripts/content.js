@@ -46,7 +46,22 @@ window.addEventListener('load', () => {
     const rightside = document.querySelector('#container > .rightside');
 
     if (rightside) {
-        rightside.innerHTML = '';
+
+        chrome.storage.local.get(['popularCollapse'], (res) => {
+          if (res.popularCollapse ?? true) {
+            new MutationObserver((mutations, obs) => {
+              const cards = rightside.querySelectorAll(".card");
+              
+              if (cards[0] && cards[1]) {
+                if (cards[0].querySelector('a.article') && cards[1].querySelector('a.list')) {
+                  cards[0].querySelectorAll('a.article').forEach((a) => a.remove());
+                  cards[1].querySelectorAll('a.list').forEach((a) => a.remove());
+                  obs.disconnect();
+                }
+              }
+            }).observe(document.body, {childList: true, subtree: true});
+          }
+        });
 
         // iframe 생성
         const iframe = document.createElement('iframe');
@@ -61,7 +76,8 @@ window.addEventListener('load', () => {
         const wrapper = document.createElement('div');
         wrapper.style.position = 'relative';
         wrapper.style.width = '100%';
-        wrapper.style.height = 'auto';
+        wrapper.style.height = '880px';
+        wrapper.style.marginBottom = '10px';
         wrapper.appendChild(iframe);
 
         // top-left 50x50 클릭 차단 오버레이
@@ -75,6 +91,6 @@ window.addEventListener('load', () => {
         overlay.style.background = 'transparent'; //투명
 
         wrapper.appendChild(overlay);
-        rightside.appendChild(wrapper);
+        rightside.prepend(wrapper);
     }
 });
