@@ -1,3 +1,4 @@
+
 :root {
   --first-color: #176B87;
   --second-color: #86B6F6;
@@ -77,69 +78,11 @@ div.menus {
     background-color: var(--fourth-color) !important;
 }
 
-
-div.rightside .tablebody,
-div.rightside .tablebody > div.grid,
-div.rightside .tablebody > div.grid > div {
-  background-color: #e1f4fbe0 !important;
-  color: #000            !important;
-}
-/* 1) tablebody 컨테이너 고정 폭 확인 */
-div.rightside .tablebody {
-  width: 325px !important;
-  box-sizing: border-box !important;
-}
-
-
-
-/* .cols: 요일별 수업 배치용 셀 */
-div.rightside .cols {
-  position: relative !important;
-  width: 70px !important;
-  display: block !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* .grid: 시간표 라인용 */
-div.rightside .grid {
-  position: relative !important;
-  width: 100% !important;
-  display: block !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-div.rightside .subject {
-  position: absolute !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  padding: 4px 6px !important;
-  box-sizing: border-box !important;
-  font-size: 12px !important;
-  overflow: hidden;
-  white-space: normal !important;
-  word-break: break-word !important;
-  color: #000 !important;
-}
-
-
-/* 2) tablebody 를 static flow 로 */
-div.rightside .tablebody {
-  position: static !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;      /* 부모 325px 전부 채우기 */
-  box-sizing: border-box !important;
-}
-
-
-/* td 는 60px */
-div.rightside table td {
-  width: 60px !important;
-  box-sizing: border-box !important;
+.my-timetable-iframe {
+  width: 105%;           
+  height: 1100px;         
+  border: none;
+  box-shadow: 0 0 6px rgba(35, 152, 206, 0.1); 
 }
 
 /* 배너 광고 삭제 */
