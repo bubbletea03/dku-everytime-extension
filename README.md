@@ -5,11 +5,28 @@ https://kyni.notion.site/1b416d2b6c8c80de8a7eccb232fe7fb2
 
 ![image](https://github.com/user-attachments/assets/1835053e-0413-46ba-a23d-162bf56946e3)
 
+---
+# 유저 가이드
+
+<a>임시 링크</a> 로 이동하여 크롬 브라우저에 확장프로그램을 추가합니다.
+
+<br>
+everytime.kr, 즉 에브리타임으로 이동하여 로그인을 하면 바뀐 테마와 편의 기능을 확인할 수 있습니다.
+<br>
+
+![image](https://github.com/user-attachments/assets/5cca000d-ce4f-466e-9486-21c43a89bfdf)
+- 크롬 브라우저의 우측 상단에서 추가한 확장프로그램을 확인할 수 있습니다.
+
+![image](https://github.com/user-attachments/assets/b779bdd2-469b-40d0-8dbc-196b6b42f166)
+- 해당 확장프로그램을 클릭하면, 원하는 기능을 끄고 켤 수 있는 팝업 창이 나옵니다.
+  - 키워드 차단 설정... 으로 들어가면 원하는 키워드를 추가하거나 추가 편의 기능을 켤 수 있습니다. 
+
+
 
 ---
 # 개발자 가이드
 
-### 프로젝트 디렉터리 구조
+## 프로젝트 디렉터리 구조
 - `background/` : 백그라운드에서 돌아가는 스크립트
 - `icons/` : 사용되는 icon
 - `lib/` : 라이브러리를 쓸 경우 넣을 폴더
@@ -18,9 +35,10 @@ https://kyni.notion.site/1b416d2b6c8c80de8a7eccb232fe7fb2
 - **scripts/** : 실제로 확장프로그램이 **everytime.kr** 에 대해 적용하는 JS/CSS
 
 확장프로그램이 everytime.kr 에 적용하는 전체적인 내용은 content.js 를 확인하면 볼 수 있습니다.
+
 content.js 는 JS의 module 기능을 이용할 수 없어 import 등이 불가능합니다.
 
-### 확장 프로그램 테스트 방법
+## 확장 프로그램 테스트 방법
 
 ![image](https://github.com/user-attachments/assets/df6659b7-759e-4dcd-82db-b1ec7dad1177)
 1. 크롬 브라우저 우측 상단에 확장프로그램 버튼을 눌러 `확장 프로그램 관리` 클릭합니다.
@@ -35,7 +53,4 @@ content.js 는 JS의 module 기능을 이용할 수 없어 import 등이 불가�
 
 이 방법으로 dku-everytime-extension 프로젝트를 직접 테스트할 수 있습니다.
 
-
-
 ---
-# 유저 가이드
