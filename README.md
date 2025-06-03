@@ -25,7 +25,7 @@ https://kyni.notion.site/1b416d2b6c8c80de8a7eccb232fe7fb2
 ## 2. 설치 방법 
 
 #### 1. 브라우저 확장일 경우:
- - 크롬 웹 스토어 링크 접속: <a>임시 링크</a>
+ - 크롬 웹 스토어 링크 접속: <a href="https://chromewebstore.google.com/category/extensions?hl=ko">임시 링크</a>
  - "Chrome에 추가" 버튼 클릭
  - "확장 프로그램 추가" 클릭하여 설치 완료
 
