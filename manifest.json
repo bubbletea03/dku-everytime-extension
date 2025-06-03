@@ -58,7 +58,6 @@
         "page": "options/options.html"
     },
     "permissions": [
-        "storage",
-        "tabs"
+        "storage"
     ]
 }
