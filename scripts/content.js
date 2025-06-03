@@ -79,6 +79,8 @@ window.addEventListener('load', () => {
             wrapper.style.height = '680px';
             wrapper.style.marginBottom = '10px';
             wrapper.style.overflow = "hidden";
+            wrapper.style.border ='2px solid rgb(202, 220, 245)';
+            wrapper.style.borderRadius = '6px';
             wrapper.appendChild(iframe);
 
             // top-left 50x50 클릭 차단 오버레이
@@ -171,7 +173,57 @@ window.addEventListener('load', () => {
             });
         }
       });
+
+      // 3. 학점 계산기 삽입 (rightside의 시간표 아래, 학식추천 위에)
+      chrome.storage.local.get(['calculator'], (res) => {
+        if (res.calculator ?? true) {
+          const rightside = document.querySelector('#container > .rightside');
+
+          if (rightside) {
+            const wrapper = document.createElement('div');
+            wrapper.style.width = '100%';
+            wrapper.style.height = '80px';
+            wrapper.style.overflow = 'hidden';
+            wrapper.style.borderRadius = '6px';
+            wrapper.style.margin = '10px 0';
+            wrapper.style.border = '2px solid rgb(202, 220, 245)';
+            wrapper.style.position = 'relative';  // 클릭 방지용 오버레이를 위한 상대 위치
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://everytime.kr/calculator';
+            iframe.style.width = '1200px';
+            iframe.style.height = '900px';
+            iframe.style.transform = 'scale(0.8)';
+            iframe.style.transformOrigin = 'top left';
+            iframe.style.marginTop = '-83px';
+            iframe.style.marginLeft = '-163px';
+            iframe.style.border = 'none';
+
+            // 클릭 방지를 위한 투명 오버레이
+            const overlay = document.createElement('div');
+            overlay.style.position = 'absolute';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'transparent';
+            overlay.style.zIndex = '10';
+            overlay.style.pointerEvents = 'auto';  // 클릭 차단
+
+            wrapper.appendChild(iframe);
+            wrapper.appendChild(overlay);
+
+            // 삽입 위치: 시간표 iframe wrapper 아래
+            const wrappers = rightside.querySelectorAll('iframe[src*="timetable"]');
+            if (wrappers.length > 0) {
+              const timetableWrapper = wrappers[0].parentElement;
+              timetableWrapper.insertAdjacentElement('afterend', wrapper);
+            } else {
+              rightside.prepend(wrapper);
+            }
+          }
+        }
+      });
+
     }
 });
-
-// 3. 학점 계산기 삽입 
