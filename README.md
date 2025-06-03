@@ -66,13 +66,13 @@ https://kyni.notion.site/1b416d2b6c8c80de8a7eccb232fe7fb2
 
 
 ### 3.6 팝업 기능
-![image](https://github.com/user-attachments/assets/b779bdd2-469b-40d0-8dbc-196b6b42f166)
 
 - 오른쪽 상단의 확장 프로그램을 클릭하면, 원하는 기능을 끄고 켤 수 있는 팝업 창이 나옵니다. 
  1. 시간표: 시간표의 표시 유무를 선택
  2. 에드가드 활성화: 광고차단 기능의 활성화를 선택
  3. 인기글 접어놓기: 실시간 인기글, Hot 게시물 접는 기능 활성화 선택 
  4. 학식 추천 보기: 학식 추천 기능 활성화 선택
+
 
 ![alt text](image-1.png)
 
